@@ -8,3 +8,5 @@ from assistive_gym.envs.dressing_envs import DressingPR2Env, DressingBaxterEnv, 
 from assistive_gym.envs.arm_manipulation_envs import ArmManipulationPR2Env, ArmManipulationBaxterEnv, ArmManipulationSawyerEnv, ArmManipulationJacoEnv, ArmManipulationStretchEnv, ArmManipulationPandaEnv, ArmManipulationPR2HumanEnv, ArmManipulationBaxterHumanEnv, ArmManipulationSawyerHumanEnv, ArmManipulationJacoHumanEnv, ArmManipulationStretchHumanEnv, ArmManipulationPandaHumanEnv
 from assistive_gym.envs.human_testing import HumanTestingEnv
 from assistive_gym.envs.smplx_testing import SMPLXTestingEnv
+from assistive_gym.envs.test_task_robots import TestPR2Env
+from assistive_gym.envs.test_task_robots import TestStretchEnv

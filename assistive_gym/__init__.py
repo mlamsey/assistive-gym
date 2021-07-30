@@ -31,3 +31,15 @@ register(
     max_episode_steps=200,
 )
 
+# Lamsey env test
+register(
+    id='TestPR2-v1',
+    entry_point='assistive_gym.envs:TestPR2Env',
+    max_episode_steps=200,
+)
+
+register(
+    id='TestStretch-v1',
+    entry_point='assistive_gym.envs:TestStretchEnv',
+    max_episode_steps=200,
+)
