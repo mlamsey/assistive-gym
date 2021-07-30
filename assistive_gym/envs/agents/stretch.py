@@ -4,7 +4,7 @@ import pybullet as p
 from .robot import Robot
 
 class Stretch(Robot):
-    def __init__(self, controllable_joints='right'):
+    def __init__(self, controllable_joints='wheel_right'):
         # right_arm_joint_indices = [0, 1, 3, 5, 6, 7, 8, 9] # Controllable arm joints
         right_arm_joint_indices = [3, 5, 9] # Controllable arm joints
         left_arm_joint_indices = right_arm_joint_indices # Controllable arm joints
