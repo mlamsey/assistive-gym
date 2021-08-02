@@ -1,5 +1,5 @@
 import argparse
-from .env_viewer import viewer
+from .control_environment import viewer
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Assistive Gym Environment Viewer')
