@@ -10,3 +10,4 @@ from assistive_gym.envs.human_testing import HumanTestingEnv
 from assistive_gym.envs.smplx_testing import SMPLXTestingEnv
 from assistive_gym.envs.test_task_robots import TestPR2Env
 from assistive_gym.envs.test_task_robots import TestStretchEnv
+from assistive_gym.envs.stable_resting_pose import StableRestingPoseEnv

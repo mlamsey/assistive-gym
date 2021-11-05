@@ -43,3 +43,9 @@ register(
     entry_point='assistive_gym.envs:TestStretchEnv',
     max_episode_steps=200,
 )
+
+register(
+    id='StableRestingPose-v1',
+    entry_point='assistive_gym.envs:StableRestingPoseEnv',
+    max_episode_steps=200,
+)
