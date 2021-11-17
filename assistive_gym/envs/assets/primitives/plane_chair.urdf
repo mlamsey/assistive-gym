@@ -23,9 +23,9 @@
     
     # Arms
     <visual>
-      <origin rpy="0 0 0" xyz="0.3 0 0.6"/>
+      <origin rpy="0 0 0" xyz="0.325 0 0.65"/>
       <geometry>
-	<mesh filename="plane.obj" scale="0.1 0.25 1"/>
+	<mesh filename="plane.obj" scale="0.075 0.25 1"/>
       </geometry>
        <material name="grey">
         <color rgba="0.5 0.5 0.5 1"/>
@@ -33,9 +33,9 @@
     </visual>
     
     <visual>
-      <origin rpy="0 0 0" xyz="-0.3 0 0.6"/>
+      <origin rpy="0 0 0" xyz="-0.325 0 0.65"/>
       <geometry>
-	<mesh filename="plane.obj" scale="0.1 0.25 1"/>
+	<mesh filename="plane.obj" scale="0.075 0.25 1"/>
       </geometry>
        <material name="grey">
         <color rgba="0.5 0.5 0.5 1"/>
@@ -44,7 +44,7 @@
     
     # Back
     <visual>
-      <origin rpy="1.4 0 0" xyz="0 0.3 0.7"/>
+      <origin rpy="1.4 0 0" xyz="0 0.2 0.7"/>
       <geometry>
 	<mesh filename="plane.obj" scale="0.3 0.3 1"/>
       </geometry>
@@ -64,16 +64,16 @@
     
     # Arms
     <collision>
-      <origin rpy="0 0 0" xyz="0.3 0 0.6"/>
+      <origin rpy="0 0 0" xyz="0.325 0 0.65"/>
       <geometry>
-	<mesh filename="plane.obj" scale="0.1 0.25 1"/>
+	<mesh filename="plane.obj" scale="0.075 0.25 1"/>
       </geometry>
     </collision>
     
     <collision>
-      <origin rpy="0 0 0" xyz="-0.3 0 0.6"/>
+      <origin rpy="0 0 0" xyz="-0.325 0 0.65"/>
       <geometry>
-	<mesh filename="plane.obj" scale="0.1 0.25 1"/>
+	<mesh filename="plane.obj" scale="0.075 0.25 1"/>
       </geometry>
     </collision>
     
