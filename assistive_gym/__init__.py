@@ -47,5 +47,5 @@ register(
 register(
     id='StableRestingPose-v1',
     entry_point='assistive_gym.envs:StableRestingPoseEnv',
-    max_episode_steps=200,
+    max_episode_steps=100,
 )

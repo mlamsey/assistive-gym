@@ -18,15 +18,16 @@ def configure_human(human):
     joint_pos = default_sitting_pose(human)
     human.setup_joints(joint_pos, use_static_joints=False, reactive_force=None)
 
-    start_pos = [0, 0, 0.75]
+    start_pos = [0, 0.05, 0.875]
     start_orient = [0, 0, 0, 1]
     human.set_base_pos_orient(start_pos, start_orient)
-    human.set_on_ground()
+    # human.set_on_ground()
 
     joint_i = [pose[0] for pose in joint_pos]
     joint_th = [pose[1] for pose in joint_pos]
     joint_gains = [10.] * len(joint_i)
-    forces = [50.] * len(joint_i)
+    # forces = [50.] * len(joint_i)
+    forces = [1.] * len(joint_i)
 
     # tweak joint control
     for i in range(len(joint_gains)):
@@ -68,14 +69,17 @@ class BasePoseEnv(AssistiveEnv):
         n_dof = len(action)
         action = np.zeros(n_dof).ravel()
         self.take_step(action)
-        return self._get_obs()
+        observation = self._get_obs()
+        self.steps += 1
+        reward = 0
+        done = False if self.steps < self.max_steps else True
+        info = {"n/a": 'n/a'}  # must be a dict
+        return observation, reward, done, info
 
     def _get_obs(self, agent=None):
-        observation = None
-        reward = 0
-        done = False
-        info = 'n/a'
-        return observation, reward, done, info
+        # observation = self.human.get_joint_angles()
+        observation = self.human.get_pos_orient(self.human.head)
+        return observation
 
     def reset(self):
         super(BasePoseEnv, self).reset()
@@ -88,10 +92,13 @@ class BasePoseEnv(AssistiveEnv):
 
         p.resetDebugVisualizerCamera(cameraDistance=1.10, cameraYaw=40, cameraPitch=-45, cameraTargetPosition=[-0.2, 0, 0.75], physicsClientId=self.id)
         p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 1, physicsClientId=self.id)
+        return self._get_obs()
 
 
 class StableRestingPoseEnv(BasePoseEnv):
     def __init__(self):
         human = Human(controllable_joint_indices=controllable_joints, controllable=True)
         super(BasePoseEnv, self).__init__(human=human)
+        self.steps = 0
+        self.max_steps = 100
 
